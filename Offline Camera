@@ -1,1 +1,41 @@
+# I wanted to test to see if I could make a camera as secure as possible. 
+# I also wanted the experience in case I ever need to make a cam system.  
+# Whats more secure than offline? (Probably something im not sure yet)
+# Below will be the issues I ran into and how I got it to work
+
+## Step 1: Camera Setup 
+    # I have a layout of my rack in the rack layout file with visuals and equipment types
+    # The camera is a REOLINK RLC-510A
+
+1.) Downloaded the REOLINK software onto my would be offline laptop.
+2.) Plugged the camera into my POE switch.
+3.) Disconnected from my laptops wifi and plugged it into the POE switch
+    # Both ports on the switch showed greenlight and were connected properly (cam was powered correctly as I could see the infared in a darker space)
+4.) When trying to connect the camera in the REOLINK software it was not found over the LAN connection. # When entering the UID it would not connect either
+5.) The software had a section to connect via IP but did not find on the box or in the manual the set IP adress
+6.) Asked ChatGPT what the IP address for the camera might be for that brand it gave me a few and I tried to ping them in CMD and open a webpage to those IP's (None loaded) (Nothing pinged back)
+7.) Tried to use advanced IP to see the camera but due to it not being online and on my network it did not pop up
+    # After this I did a bit of reserch to see some possible issues and found that connectivity compatibility means alot
+8.) Using NCPA.CPL I completley disabled the WIFI on my laptop and went to my POE switch properties and set a static IP address and SUBNET for my laptop.
+9.) I then connected my switch to the internet and unplugged my laptop and plugged in my desktop. 
+10.) Downloaded the REOLINK software on my desktop
+11.) Camera connected right away and had a live veiw after I set a password.
+12.) Went into the cameras network settings and found the IP 
+13.) When pining the IP I had 4 responses 
+14.) Thinking the IP on the cam might possibly change when taking it off the network and back offline I changed the cameras static IP to not interfere with the laptops assigned IP address 
+15.) I took my switch back offline and re plugged in my laptop.
+16.) I pinged the cameras new static IP on the fully offline laptop and got a response.
+17.) When opening the software the camera wasnt automatically connected (I thought this would be the case)
+18.) In the connect via IP section of the software I entered the cameras new static IP and it connecvted without issue.
+    # A question I would like to test is if I didnt changed the IP of the camera after I found it when it was online and tried that IP on my offline setup if it would connect? Would the swithc being offline have changed the IP of the camera? (Will test soon)
+
+#These steps were the process and errors I encountered in order to get a fully offline live feed from my camera.
+    ## One note about the camera is that it does not have an SD card so the next part of the proccess is getting the footage from stictly live feed to rercording and storing for 2-3 days then deleting if I do not want to save a clip of the footage.
+      # Some questions and notes before I start the proccess.
+1.) I am going to test storing footage on my laptop thats offline but want to end up replacing it to my rasberry pi 4 once I know how to do it
+2.) What do I need to set up in order to store the footage? (Software? Server? Etc?)
+3.) How am I going to transfer it to my ras pi 4 with a connected HHD?
+4.) How much stoarage does 2-3 day recording take up and at what quality can i play around with?
+5.) Do I set up motion tracking to save storage? Would it even matter if I have enough sotrage to hold it for 2-3 days then delete?
+
 
