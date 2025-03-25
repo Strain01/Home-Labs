@@ -1,1 +1,41 @@
 
+# The following diagram is a bit of an idea of what the rack currently looks like.
+    # Details about the equpment will be on the bottom of the diagram.
+
+
++----------------------------+
+|        Laptop (Offline)    |  <- Resting on top outside
+|        Camera (Offline)    |  <- Resting on top outside
++----------------------------+
+|          Fan (Inside, Roof Mounted)        |
++----------------------------+
+| PU 6                                      |
++----------------------------+
+| PU 5                                      |
+|   [ PoE Switch (Offline) ]                |
+|   [ Network Switch (Online) ]             |  <- Mounted between PU 4 and PU 5
++----------------------------+
+| PU 4                                      |
++----------------------------+
+| PU 3                                      |
++----------------------------+
+| PU 2                                      |
++----------------------------+
+| PU 1                                      |
+|   [ Raspberry Pi 4 ]  [ Hard Drive ]      |  <- Placed at the bottom
++----------------------------+
+
+
+Laptop = N/A
+
+Camera = REOLINK RLC-510A
+
+POE Switch = TP-Link TL-SF1008P, 8 Port 10/100Mbps PoE Switch, 4 PoE+ Ports @66W
+
+Network Switch = Cisco Catalyst WS-C2960X-24TS-L 2960X 24 Port Gigabit Ethernet Switch 
+
+Rasberry PI 4 = CanaKit Raspberry Pi 4 4GB Basic Kit with PiSwitch (4GB RAM)
+
+Hard Drive = WD 1TB Elements Portable External Hard Drive for Windows, USB 3.2 Gen 1/USB 3.0
+
+
